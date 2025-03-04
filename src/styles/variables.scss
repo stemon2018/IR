@@ -1,0 +1,45 @@
+// 🎨 COLORS
+$primary-color: #1d4ed8;
+$primary-dark: #1e40af;
+$background-light: #f9fafb;
+$background-dark: #1f2937;
+$text-light: #1f2937;
+$text-dark: #f9fafb;
+$card-bg-light: #ffffff;
+$card-bg-dark: #374151;
+
+// 🏗️ LAYOUT BREAKPOINTS
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;
+
+// 🎨 BUTTON STYLES
+@mixin button-style($bg-color, $hover-color) {
+  background: $bg-color;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease-in-out;
+
+  &:hover {
+    background: darken($hover-color, 10%);
+  }
+}
+
+// 📌 CARD STYLES
+@mixin card-style {
+  background: $card-bg-light;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  border: 2px solid transparent;
+
+  &:hover {
+    transform: scale(1.02);
+    border-color: $primary-color;
+  }
+}
