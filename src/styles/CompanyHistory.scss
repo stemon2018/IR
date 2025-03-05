@@ -56,8 +56,9 @@
 
       .step-image {
         width: 100%; 
-        max-height: 250px;
-        object-fit: cover;
+        display: block;
+        max-height: none;
+        object-fit: contain;
         border-radius: 10px;
         margin-bottom: 10px;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);

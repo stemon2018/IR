@@ -1,0 +1,29 @@
+@import "./variables";
+
+.core-tech {
+  min-height: 100vh;
+  padding: $section-padding;
+  background: $background-light;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    font-size: $font-size-title;
+    color: $primary-color;
+  }
+
+  .tech-images {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    img {
+      width: 45%;
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
