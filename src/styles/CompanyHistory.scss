@@ -1,4 +1,4 @@
-@import "./variables"; // Import global styles
+@import "./variables";
 
 .company-history {
   display: flex;
@@ -52,16 +52,25 @@
       padding: 0.5rem;
       background: #f3f4f6;
       border-radius: 5px;
+      text-align: center;
+
+      .step-image {
+        width: 100%; 
+        max-height: 250px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      }
     }
   }
 
   .github-button {
-    margin-top: 2rem;  // Push button down
+    margin-top: 2rem; 
     display: flex;
     justify-content: center;
   }
 
-  // Responsive Design
   @media (max-width: $tablet) {
     padding: 1rem;
 
