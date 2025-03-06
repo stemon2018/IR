@@ -1,14 +1,15 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom"; // Ensure this is installed
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 
-ReactDOM.render(
-  <BrowserRouter basename="/IR">  {/* Add the basename */}
+// Create the root
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <BrowserRouter>
     <App />
-  </BrowserRouter>,
-  document.getElementById("root")
-)
+  </BrowserRouter>
+);
 
 // // If you want to start measuring performance in your app, pass a function
 // // to log results (for example: reportWebVitals(console.log))
