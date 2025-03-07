@@ -26,12 +26,14 @@
 
   .menu-icon {
     display: none;
-    font-size: 2rem;
-    color: $text-light;
+    background: none;
+    border: none;
+    color: white;
     cursor: pointer;
+    margin-right: 20px;
   }
 
-  ul {
+  .nav-links {
     list-style: none;
     display: flex;
     gap: 30px;
@@ -51,46 +53,47 @@
         color: $secondary-color;
       }
 
-      &.active::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -4px;
-        width: 100%;
-        height: 2px;
-        background-color: white;
-      }
-
       &:hover {
         color: $secondary-color;
       }
     }
   }
-}
 
-// 📌 Mobile View Adjustments
-@media (max-width: 768px) {
-  .menu-icon {
-    display: block;
-  }
+  /* 📌 Mobile Responsive Styles - Slide Menu from Right */
+  @media (max-width: 768px) {
+    .menu-icon {
+      display: block;
+    }
 
-  ul {
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background-color: $primary-color;
-    padding: 10px 0;
-    display: none;
-  }
+    .nav-links {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 220px;
+      background: rgba(0, 0, 0, 0.9);
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 2rem;
+      display: flex;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+    }
 
-  .navbar.open ul {
-    display: flex;
-  }
+    .nav-links.open {
+      transform: translateX(0);
+    }
 
-  li {
-    text-align: center;
-    padding: 10px 0;
+    li {
+      text-align: left;
+      padding: 15px 0;
+      width: 100%;
+    }
+
+    li a {
+      font-size: 1.2rem;
+      width: 100%;
+      display: block;
+    }
   }
 }

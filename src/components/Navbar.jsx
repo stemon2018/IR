@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import "../styles/Navbar.scss";
-import logo from "../assets/logo.png"; // Make sure the logo is inside src/assets/
+import logo from "../assets/logo.png";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -10,11 +11,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 50);
 
       const sections = ["home", "company-intro", "core-tech", "business", "patents"];
       let foundSection = "home";
@@ -38,13 +35,18 @@ const Navbar = () => {
 
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""} ${menuOpen ? "open" : ""}`}>
+      {/* Logo */}
       <div className="logo">
         <img src={logo} alt="Company Logo" />
       </div>
-      <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
-        ☰
-      </div>
-      <ul>
+
+      {/* Hamburger Menu Icon (Right-Aligned) */}
+      <button className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+        {menuOpen ? <X size={30} /> : <Menu size={30} />}
+      </button>
+
+      {/* Navbar Links - Slide from Right */}
+      <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
         {["home", "company-intro", "core-tech", "business", "patents"].map((section) => (
           <li key={section}>
             <Link
