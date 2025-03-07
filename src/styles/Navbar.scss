@@ -59,8 +59,15 @@
     }
   }
 
-  /* 📌 Mobile Responsive Styles - Slide Menu from Right */
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
+    .nav-links {
+      gap: 20px;
+      font-size: 0.9rem;
+    }
+  }
+
+  /* 📌 Mobile Responsive - Switch to Hamburger Menu at 1024px */
+  @media (max-width: 1024px) {
     .menu-icon {
       display: block;
     }
