@@ -13,7 +13,7 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
 
-      const sections = ["home", "company-intro", "core-tech", "business", "patents"];
+      const sections = ["home", "회사소개", "핵심역량기술", "비즈니스파이프라인", "특허/인증"];
       let foundSection = "home";
 
       for (let section of sections) {
@@ -47,7 +47,7 @@ const Navbar = () => {
 
       {/* Navbar Links - Slide from Right */}
       <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-        {["home", "company-intro", "core-tech", "business", "patents"].map((section) => (
+        {["home", "회사소개", "핵심역량기술", "비즈니스파이프라인", "특허/인증"].map((section) => (
           <li key={section}>
             <Link
               to={section}
