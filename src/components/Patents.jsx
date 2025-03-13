@@ -1,12 +1,13 @@
 import React from "react";
 import "../styles/Patents.scss";
+import placeholderImage from "../images/IRL-03.png";
 
 const Patents = () => {
   return (
     <section id="특허/인증" className="patents">
-      <h2>특허/인증</h2>
-      <img src="/images/patents.jpg" alt="Patents & Certifications" />
-      <p>We hold multiple patents in biotech and engineering...</p>
+      <div className="image-placeholder">
+        <img src={placeholderImage} alt="Patents & Certifications" />
+      </div>
     </section>
   );
 };

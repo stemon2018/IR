@@ -1,12 +1,14 @@
 import React from "react";
 import "../styles/BusinessPipeline.scss";
+import placeholderImage from "../images/IRL-04.png";
 
 const BusinessPipeline = () => {
   return (
     <section id="비즈니스파이프라인" className="business-pipeline">
-      <h2>비즈니스파이프라인</h2>
-      <img src="/images/pipeline.jpg" alt="Pipeline Overview" />
-      <p>Our business model focuses on scalability and sustainability...</p>
+      {/* Full-page image placeholder */}
+      <div className="image-placeholder">
+        <img src={placeholderImage} alt="Pipeline Overview" />
+      </div>
     </section>
   );
 };
