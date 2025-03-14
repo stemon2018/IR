@@ -1,23 +1,27 @@
 @import "./variables";
 
 .company-intro-section {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  background-color: #042160;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background-color: $primary-color;
 
-  .image-placeholder {
-    width: 100%;
-    max-width: 1200px;
+  .image-container {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     img {
-      width: 100%;
-      height: 100%;
+      width: 100vw;
+      height: 80%;
+      object-fit: contain;
       display: block;
-      margin: auto;
     }
   }
 }
