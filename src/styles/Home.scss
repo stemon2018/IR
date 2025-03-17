@@ -1,152 +1,27 @@
 @import "./variables";
 
 .home-section {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 80px 20px;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
   overflow: hidden;
+  background-color: $primary-color;
 
-  // Background Overlay
-  .background-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("/images/background.jpg") no-repeat center center/cover;
-    z-index: -1;
-  }
-
-  // Main Title
-  .main-title {
-    font-size: 40px;
-    font-weight: bold;
-    color: white;
-    margin-bottom: 20px;
-    line-height: 1.5;
-  }
-
-  // Highlighted Text
-  .highlight-section {
+  .image-container {
+    width: 100vw;
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
     justify-content: center;
-    font-size: 24px;
-    color: white;
-    margin-bottom: 30px;
+    align-items: center;
 
-    .highlight-box {
-      background-color: #79e6c4;
-      color: #005392;
-      font-weight: bold;
-      padding: 5px 15px;
-      border-radius: 25px;
-    }
-  }
-
-  // Expandable Box
-  .expandable-box {
-    width: 60%;
-    max-width: 900px;
-    background: white;
-    padding: 30px;
-    border-radius: 65px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-    transition: all 0.5s ease-in-out;
-    position: relative;
-    margin-bottom: 50px;
-
-    .description {
-      font-size: 18px;
-      font-weight: bold;
-      color: #00b38c;
-      line-height: 1.8;
-    }
-
-    // Expand Button
-    .expand-btn {
-      margin-top: 10px;
-      font-size: 16px;
-      color: #333;
-      border: none;
-      background: none;
-      cursor: pointer;
-    }
-
-    // Expanded Section (Hidden Initially)
-    .expanded-content {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      margin-top: 20px;
-
-      .product-card {
-        background: white;
-        border-radius: 15px;
-        padding: 15px;
-        text-align: center;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-        width: 250px;
-
-        img {
-          width: 100%;
-          border-radius: 10px;
-        }
-
-        h3 {
-          font-weight: bold;
-          margin-top: 10px;
-          font-size: 18px;
-        }
-
-        p {
-          font-size: 14px;
-          color: #666;
-        }
-      }
-
-      .video-player {
-        width: 320px;
-        height: 180px;
-        border-radius: 15px;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-      }
-    }
-  }
-
-  // When Expanded
-  .expanded {
-    .expandable-box {
-      height: auto;
-      padding: 40px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .main-title {
-      font-size: 28px;
-    }
-
-    .highlight-section {
-      font-size: 18px;
-    }
-
-    .expandable-box {
-      width: 90%;
-      padding: 20px;
-    }
-
-    .expanded-content {
-      flex-direction: column;
-      align-items: center;
+    img {
+      width: 100vw;
+      height: 80%;
+      object-fit: contain;
+      display: block;
     }
   }
 }

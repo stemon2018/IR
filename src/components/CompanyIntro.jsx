@@ -2,17 +2,16 @@ import React from "react";
 import "../styles/CompanyIntro.scss";
 
 // Import all images
-import image1 from "../images/회사소개/IRL-01.png";
-import image2 from "../images/회사소개/IRL-02.png";
-import image3 from "../images/회사소개/IRL-03.png";
-import image4 from "../images/회사소개/IRL-04.png";
-import image5 from "../images/회사소개/IRL-05.png";
-import image6 from "../images/회사소개/IRL-06.png";
-import image7 from "../images/회사소개/IRL-07.png";
-import image8 from "../images/회사소개/IRL-08.png";
+import image1 from "../images/2.회사소개/IR-01.jpg";
+import image2 from "../images/2.회사소개/IR-02.jpg";
+import image3 from "../images/2.회사소개/IR-03.jpg";
+import image4 from "../images/2.회사소개/IR-04.jpg";
+import image5 from "../images/2.회사소개/IR-05.jpg";
+import image6 from "../images/2.회사소개/IR-06.jpg";
+import image7 from "../images/2.회사소개/IR-07.jpg";
 
 const CompanyIntro = () => {
-  const images = [image1, image2, image3, image4, image5, image6, image7, image8];
+  const images = [image1, image2, image3, image4, image5, image6, image7];
 
   return (
     <section id="회사소개" className="company-intro-section">

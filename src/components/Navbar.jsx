@@ -42,7 +42,7 @@ const Navbar = () => {
 
       {/* Hamburger Menu Icon (Right-Aligned) */}
       <button className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
-        {menuOpen ? <X size={30} /> : <Menu size={30} />}
+        {menuOpen ? <X size={30} className="close-icon"/> : <Menu size={30} />}
       </button>
 
       {/* Navbar Links - Slide from Right */}
