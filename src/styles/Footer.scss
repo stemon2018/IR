@@ -7,27 +7,27 @@
   background: $primary-color;
 
   .qa-button {
-    background: linear-gradient(to right, #3FE7DA, #6BD7F8); // Smooth gradient
+    background: linear-gradient(to right, #3FE7DA, #6BD7F8);
     color: $text-light;
     padding: 12px 24px;
     font-size: 1rem;
     font-weight: bold;
     border: none;
-    border-radius: 30px; // Fully rounded edges
+    border-radius: 30px;
     cursor: pointer;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); // Soft shadow for 3D effect
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-in-out;
     width: auto;
     min-width: 180px;
     max-width: 250px;
   
     &:hover {
-      transform: translateY(-2px); // Slight lift effect
+      transform: translateY(-2px);
       box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
     }
   
     &:active {
-      transform: scale(0.95); // Subtle click effect
+      transform: scale(0.95); 
     }
   }
   

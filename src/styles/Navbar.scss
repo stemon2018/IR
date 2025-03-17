@@ -10,11 +10,16 @@
   align-items: center;
   z-index: 1000;
   background: transparent;
-  transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
 
   &.scrolled {
     background: $primary-color;
   }
+
+  &.hidden{
+    transform: translate(-100%);
+  }
+  
 
   .logo {
     margin-left: 20px;
