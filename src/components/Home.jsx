@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/Home.scss";
 
-import image from "../images/1.HOME/IR-Home.jpg";
+import image from "../images/1.Home/IR-Home.jpg";
 
 const Home = () => {
   return (
