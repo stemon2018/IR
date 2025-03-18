@@ -12,11 +12,11 @@
   background-color: $primary-color;
 
   .image-container {
+    position: relative;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
 
     img {
       width: 100vw;
@@ -25,74 +25,111 @@
       display: block;
     }
 
-    .popup-btn {
+    /* Popup Button */
+    .popup-button {
       position: absolute;
-      bottom: 15%; 
-      left: 6%;  
-      background: transparent;
+      bottom: 5%;
+      left: 5%;
+      background: none;
       border: none;
       cursor: pointer;
-      z-index: 10;
+      transition: transform 0.3s ease-in-out;
 
       img {
-        width: 200px;
+        width: 180px;
         height: auto;
-        transition: transform 0.2s ease-in-out;
       }
 
-      &:hover img {
+      &:hover {
         transform: scale(1.1);
       }
     }
+
+    /* Specific Button Positioning for Different Images */
+    &:nth-child(1) .popup-button { bottom: 90%; left: 85%; }  // IR-01 Position
+    &:nth-child(4) .popup-button { bottom: 15%; right: 15%; }  // IR-04 Position
+    &:nth-child(6) .popup-button { bottom: 22%; left: 5%; }    // IR-06 Position
+    &:nth-child(7) .popup-button { bottom: 20%; left: 80%; } // IR-07 Position
   }
 }
 
+/* Popup Styling */
 .popup-overlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 1000;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  font-weight: bold;
+  color: $primary-color;
+  animation: fadeIn 0.3s ease-in-out;
+
+  .close-popup {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: $primary-color;
+
+    &:hover {
+      color: darken($primary-color, 10%);
+    }
+  }
+}
+
+/* Popup Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Fixes */
+@media (max-width: 1024px) {
+  .image-container {
+    &:nth-child(1) .popup-button { bottom: 10%; left: 5%; }
+    &:nth-child(4) .popup-button { bottom: 8%; right: 5%; }
+    &:nth-child(6) .popup-button { bottom: 5%; left: 5%; }
+    &:nth-child(7) .popup-button { bottom: 8%; right: 5%; }
+  }
 
   .popup-content {
-    background: #102a54;
-    color: white;
-    padding: 25px;
-    border-radius: 10px;
-    text-align: center;
-    max-width: 700px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    
-    h2 {
-      margin-bottom: 10px;
-      font-size: 1.6rem;
-      color: #16c79a;
-    }
+    width: 90%;
+    font-size: 0.9rem;
+  }
+}
 
-    p {
-      font-size: 1.1rem;
-      color: #ebecf3;
-      font-weight: 500;
-    }
+@media (max-width: 768px) {
+  .popup-button img {
+    width: 60px;
+  }
 
-    .close-btn {
-      margin-top: 15px;
-      background: #16c79a;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s ease-in-out;
-
-      &:hover {
-        background: darken(#16c79a, 10%);
-      }
-    }
+  .popup-content {
+    width: 95%;
+    font-size: 0.8rem;
   }
 }
