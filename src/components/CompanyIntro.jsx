@@ -7,16 +7,16 @@ import image3 from "../images/2.회사소개/IR-03.jpg";
 import image4 from "../images/2.회사소개/IR-04.jpg";
 import image5 from "../images/2.회사소개/IR-05.jpg";
 import image6 from "../images/2.회사소개/IR-06.jpg";
-import image7 from "../images/2.회사소개/IR-07.jpg";
 
 import popupIcon from "../images/아이콘/popup.png";
 
 const CompanyIntro = () => {
-  const images = [image1, image2, image3, image4, image5, image6, image7];
+  const images = [image1, image2, image3, image4, image5, image6];
 
 
   const [activePopup, setActivePopup] = useState(null);
 
+  // Popup Content
   const popupData = {
     "IR-01": "스템온은 디지털 방식 세포치료제 유도 플랫폼 UltraRepro와 디지털 방식 약물 탑재 플랫폼을 기반으로 다양한 난친성 질환에 대하여 치료제 부터 코스메슈티컬 제품을 개발하는 바이오플랫폼 회사입니다. 이에 세포 치료제의 대명사인 줄기세포 STEM과 디지털방식 스위치 On을 합하여 회사명을 스템온으로 하였습니다.",
     "IR-04": "스템온은 2018년 3월에 설립을 하였고 현재 직원이 24명이며 대표이사는 최근까지 의과대학교 교수로 역임하다가 지금은 스템온 대표이사로만 재직중입니다.",

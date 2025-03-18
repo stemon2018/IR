@@ -11,10 +11,9 @@ import image6 from "../images/3.핵심역량기술/IR-06.jpg";
 import image7 from "../images/3.핵심역량기술/IR-07.jpg";
 import image8 from "../images/3.핵심역량기술/IR-08.jpg";
 import image9 from "../images/3.핵심역량기술/IR-09.jpg";
-import image10 from "../images/3.핵심역량기술/IR-10.jpg";
 
 const CoreTechnologies = () => {
-  const images = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10];
+  const images = [image1, image2, image3, image4, image5, image6, image7, image8, image9];
 
   return (
     <section id="핵심역량기술" className="core-section">
