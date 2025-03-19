@@ -16,11 +16,6 @@
     background: $primary-color;
   }
 
-  &.hidden{
-    transform: translate(-100%);
-  }
-  
-
   .logo {
     margin-left: 20px;
     img {
@@ -40,7 +35,7 @@
     top: 20px;
     right: 20px;
     z-index: 3000;
-    
+
     svg {
       color: $text-light !important;
       fill: white !important;
@@ -83,7 +78,7 @@
         color: $secondary-color;
 
         &::after {
-          width: 100%; // Full underline effect
+          width: 100%;
         }
       }
 
@@ -104,7 +99,6 @@
     }
   }
 
-  /* 📌 Mobile Responsive - Switch to Hamburger Menu at 1024px */
   @media (max-width: 1024px) {
     .menu-icon {
       display: block;
@@ -143,7 +137,6 @@
     }
   }
 
-  /* 📌 Fix for Close (X) Button on Small Screens */
   .menu-icon svg {
     color: #ebecf3 !important;
   }

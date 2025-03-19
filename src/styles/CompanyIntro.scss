@@ -25,18 +25,30 @@
       display: block;
     }
 
+    /* GIF Overlay (Only on IR-02) */
+    .overlay-gif {
+      position: absolute;
+      top: 65%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 70vw;
+      max-width: 600px;
+      height: auto;
+      pointer-events: none;
+      border-radius: 15px;
+    }
+
     /* Popup Button */
     .popup-button {
       position: absolute;
-      bottom: 5%;
-      left: 5%;
       background: none;
       border: none;
       cursor: pointer;
       transition: transform 0.3s ease-in-out;
 
       img {
-        width: 99px;
+        width: 5vw;
+        max-width: 80px;
         height: auto;
       }
 
@@ -48,10 +60,10 @@
     /* Specific Button Positioning for Different Images */
     &:nth-child(1) .popup-button { bottom: 64%; left: 88%; }  // IR-01 Position
     &:nth-child(2) .popup-button { bottom: 64%; left: 88%; }  // IR-02 Position
-    &:nth-child(3) .popup-button { bottom: 64%; left: 88%; }  // IR-03 Position
-    &:nth-child(4) .popup-button { bottom: 64%; left: 88%; }  // IR-04 Position
+    &:nth-child(3) .popup-button { bottom: 65%; left: 88%; }  // IR-03 Position
+    &:nth-child(4) .popup-button { bottom: 65%; left: 88%; }  // IR-04 Position
     &:nth-child(5) .popup-button { bottom: 64%; left: 88%; }  // IR-05 Position
-    &:nth-child(6) .popup-button { bottom: 62%; left: 88%; }  // IR-06 Position
+    &:nth-child(6) .popup-button { bottom: 63%; left: 88%; }  // IR-06 Position
     &:nth-child(7) .popup-button { bottom: 62%; left: 88%; }  // IR-07 Position
   }
 }
@@ -113,26 +125,63 @@
 
 /* Responsive Fixes */
 @media (max-width: 1024px) {
-  .image-container {
-    &:nth-child(1) .popup-button { bottom: 10%; left: 5%; }
-    &:nth-child(4) .popup-button { bottom: 8%; right: 5%; }
-    &:nth-child(6) .popup-button { bottom: 5%; left: 5%; }
-    &:nth-child(7) .popup-button { bottom: 8%; right: 5%; }
-  }
-
   .popup-content {
     width: 90%;
     font-size: 0.9rem;
   }
+
+  .popup-button img {
+    width: 50px;
+  }
+
+  .overlay-gif {
+    top: 60%;
+    width: 80vw;
+    max-width: 500px;
+  }
+
+  /* Adjust Icon Positions for Tablet Screens */
+  .image-container {
+    &:nth-child(1) .popup-button { bottom: 10%; left: 5%; }
+    &:nth-child(2) .popup-button { bottom: 64%; left: 80%; }  
+    &:nth-child(3) .popup-button { bottom: 64%; left: 80%; }  
+    &:nth-child(4) .popup-button { bottom: 64%; left: 80%; }  
+    &:nth-child(5) .popup-button { bottom: 64%; left: 80%; }  
+    &:nth-child(6) .popup-button { bottom: 62%; left: 80%; }  
+    &:nth-child(7) .popup-button { bottom: 62%; left: 80%; }  
+  }
 }
 
 @media (max-width: 768px) {
+  .popup-button {
+    bottom: 5%; /* Keep button positioning */
+    right: 10%;
+  }
+
   .popup-button img {
-    width: 60px;
+    width: 40px;
   }
 
   .popup-content {
     width: 95%;
     font-size: 0.8rem;
+  }
+
+  .overlay-gif {
+    top: 55%;
+    left: 50%;
+    width: 50vw;
+    max-width: 250px;
+  }
+
+  /* Adjust Icon Positions for Mobile Screens */
+  .image-container {
+    &:nth-child(1) .popup-button { bottom: 10%; left: 5%; }
+    &:nth-child(2) .popup-button { bottom: 60%; left: 75%; }  
+    &:nth-child(3) .popup-button { bottom: 60%; left: 75%; }  
+    &:nth-child(4) .popup-button { bottom: 60%; left: 75%; }  
+    &:nth-child(5) .popup-button { bottom: 60%; left: 75%; }  
+    &:nth-child(6) .popup-button { bottom: 60%; left: 75%; }  
+    &:nth-child(7) .popup-button { bottom: 60%; left: 75%; }  
   }
 }

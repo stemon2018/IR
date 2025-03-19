@@ -9,6 +9,11 @@ import image5 from "../images/4.비즈니즈파이프라인/IR-05.jpg";
 import image6 from "../images/4.비즈니즈파이프라인/IR-06.jpg";
 import image7 from "../images/4.비즈니즈파이프라인/IR-07.jpg";
 
+import gif1 from "../images/3.핵심역량기술/3핵심역량기술 - 4-1 4비즈니스파이프라인 - 2-1.gif";
+import gif2 from "../images/3.핵심역량기술/3핵심역량기술 - 3 -2 4비즈니스파이프라인 - 2-2.gif";
+import gif3 from "../images/4.비즈니즈파이프라인/4비즈니스파이프라인 - 2-3.gif";
+import gif4 from "../images/3.핵심역량기술/3핵심역량기술 - 5-3 4비즈니스파이프라인 - 2-4.gif";
+
 import popupIcon from "../images/ICONS/text_icon.png";
 
 const BusinessPipeline = () => {
@@ -30,6 +35,18 @@ const BusinessPipeline = () => {
         return (
           <div key={index} className="image-container">
             <img src={img} alt={`Business Pipeline ${index + 1}`} />
+
+            {/* Add GIFs for IR-02 */}
+            {imageKey === "IR-02" && (
+              <>
+                <img src={gif1} alt="GIF 1" className="gif1" />
+                <img src={gif2} alt="GIF 2" className="gif2" />
+                <img src={gif3} alt="GIF 3" className="gif3" />
+                <img src={gif4} alt="GIF 4" className="gif4" />
+              </>
+            )}
+
+            {/* Popup Button */}
             {popupData[imageKey] && (
               <button className="popup-button" onClick={() => setActivePopup(imageKey)}>
                 <img src={popupIcon} alt="Popup Icon" />

@@ -25,18 +25,66 @@
       display: block;
     }
 
+    /* GIF Overlays for IR-02 */
+    .gif1 {
+      position: absolute;
+      top: 58%;
+      left: 23%;
+      transform: translate(-50%, -50%);
+      width: 6vw;
+      max-width: 110px;
+      height: auto;
+      pointer-events: none;
+      border-radius: 19px;
+    }
+
+    .gif2 {
+      position: absolute;
+      top: 76%;
+      left: 23%;
+      transform: translate(-50%, -50%);
+      width: 7vw;
+      max-width: 150px;
+      height: 200px;
+      pointer-events: none;
+      border-radius: 19px;
+    }
+
+    .gif3 {
+      position: absolute;
+      top: 58%;
+      left: 56%;
+      transform: translate(-50%, -50%);
+      width: 6vw;
+      max-width: 65px;
+      height: auto;
+      pointer-events: none;
+      border-radius: 19px;
+    }
+
+    .gif4 {
+      position: absolute;
+      top: 75%;
+      left: 56%;
+      transform: translate(-50%, -50%);
+      width: 25vw;
+      max-width: 110px;
+      height: auto;
+      pointer-events: none;
+      border-radius: 19px;
+    }
+
     /* Popup Button */
     .popup-button {
       position: absolute;
-      bottom: 5%;
-      left: 5%;
       background: none;
       border: none;
       cursor: pointer;
       transition: transform 0.3s ease-in-out;
 
       img {
-        width: 99px;
+        width: 5vw;
+        max-width: 80px;
         height: auto;
       }
 
@@ -46,11 +94,11 @@
     }
 
     /* Specific Button Positioning for Different Images */
-    &:nth-child(2) .popup-button { bottom: 64%; left: 88%; }  // IR-02 Position
-    &:nth-child(3) .popup-button { bottom: 64%; left: 88%; }  // IR-03 Position
-    &:nth-child(4) .popup-button { bottom: 64%; left: 88%; }  // IR-04 Position
-    &:nth-child(6) .popup-button { bottom: 62%; left: 88%; }  // IR-06 Position
-    &:nth-child(7) .popup-button { bottom: 62%; left: 88%; }  // IR-07 Position
+    &:nth-child(2) .popup-button { bottom: 64%; left: 89%; }  // IR-02 Position
+    &:nth-child(3) .popup-button { bottom: 65%; left: 89%; }  // IR-03 Position
+    &:nth-child(4) .popup-button { bottom: 65%; left: 89%; }  // IR-04 Position
+    &:nth-child(6) .popup-button { bottom: 63%; left: 89%; }  // IR-06 Position
+    &:nth-child(7) .popup-button { bottom: 62%; left: 89%; }  // IR-07 Position
   }
 }
 
@@ -112,27 +160,33 @@
 
 /* Responsive Fixes */
 @media (max-width: 1024px) {
-  .image-container {
-    &:nth-child(2) .popup-button { bottom: 20%; left: 5%; }
-    &:nth-child(3) .popup-button { bottom: 18%; left: 5%; }
-    &:nth-child(4) .popup-button { bottom: 15%; right: 5%; }
-    &:nth-child(6) .popup-button { bottom: 15%; left: 5%; }
-    &:nth-child(7) .popup-button { bottom: 12%; left: 80%; }
-  }
-
   .popup-content {
     width: 90%;
     font-size: 0.9rem;
   }
+
+  .popup-button img {
+    width: 50px !important;
+  }
+
+  .gif1, .gif2, .gif3, .gif4 {
+    width: 30vw;
+    max-width: 250px;
+  }
 }
 
 @media (max-width: 768px) {
-  .popup-button img {
-    width: 60px;
-  }
-
   .popup-content {
     width: 95%;
     font-size: 0.8rem;
+  }
+
+  .popup-button img {
+    width: 40px !important;
+  }
+
+  .gif1, .gif2, .gif3, .gif4 {
+    width: 35vw;
+    max-width: 200px;
   }
 }

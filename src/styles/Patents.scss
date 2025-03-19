@@ -28,15 +28,14 @@
     /* Popup Button */
     .popup-button {
       position: absolute;
-      bottom: 5%;
-      left: 5%;
       background: none;
       border: none;
       cursor: pointer;
       transition: transform 0.3s ease-in-out;
 
       img {
-        width: 99px;
+        width: 5vw;
+        max-width: 80px;
         height: auto;
       }
 
@@ -46,12 +45,12 @@
     }
 
     /* Specific Button Positioning for Different Images */
-    &:nth-child(2) .popup-button { bottom: 64%; left: 88%; }  // IR-02 Position
-    &:nth-child(3) .popup-button { bottom: 64%; left: 88%; }  // IR-03 Position
-    &:nth-child(4) .popup-button { bottom: 64%; left: 88%; }  // IR-04 Position
-    &:nth-child(5) .popup-button { bottom: 64%; left: 88%; }  // IR-05 Position
-    &:nth-child(6) .popup-button { bottom: 62%; left: 88%; }  // IR-06 Position
-    &:nth-child(7) .popup-button { bottom: 62%; left: 88%; }  // IR-07 Position
+    &:nth-child(2) .popup-button { bottom: 65%; left: 88%; }  // IR-02 Position
+    &:nth-child(3) .popup-button { bottom: 65%; left: 88%; }  // IR-03 Position
+    &:nth-child(4) .popup-button { bottom: 65%; left: 88%; }  // IR-04 Position
+    &:nth-child(5) .popup-button { bottom: 65%; left: 88%; }  // IR-05 Position
+    &:nth-child(6) .popup-button { bottom: 63%; left: 88%; }  // IR-06 Position
+    &:nth-child(7) .popup-button { bottom: 63%; left: 88%; }  // IR-07 Position
   }
 }
 
@@ -113,6 +112,16 @@
 
 /* Responsive Fixes */
 @media (max-width: 1024px) {
+  .popup-content {
+    width: 90%;
+    font-size: 0.9rem;
+  }
+
+  .popup-button img {
+    width: 50px !important; // Ensuring correct scaling for tablets
+  }
+
+  /* Adjust Icon Positions for Tablet Screens */
   .image-container {
     &:nth-child(2) .popup-button { bottom: 20%; left: 5%; }
     &:nth-child(3) .popup-button { bottom: 18%; left: 5%; }
@@ -121,20 +130,25 @@
     &:nth-child(6) .popup-button { bottom: 10%; left: 80%; }
     &:nth-child(7) .popup-button { bottom: 16%; right: 10%; }
   }
-
-  .popup-content {
-    width: 90%;
-    font-size: 0.9rem;
-  }
 }
 
 @media (max-width: 768px) {
-  .popup-button img {
-    width: 60px;
-  }
-
   .popup-content {
     width: 95%;
     font-size: 0.8rem;
+  }
+
+  .popup-button img {
+    width: 40px !important; // Ensuring correct scaling for mobile
+  }
+
+  /* Adjust Icon Positions for Mobile Screens */
+  .image-container {
+    &:nth-child(2) .popup-button { bottom: 60%; left: 75%; }
+    &:nth-child(3) .popup-button { bottom: 60%; left: 75%; }
+    &:nth-child(4) .popup-button { bottom: 60%; left: 75%; }
+    &:nth-child(5) .popup-button { bottom: 60%; left: 75%; }
+    &:nth-child(6) .popup-button { bottom: 60%; left: 75%; }
+    &:nth-child(7) .popup-button { bottom: 60%; left: 75%; }
   }
 }

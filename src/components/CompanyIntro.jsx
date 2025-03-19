@@ -8,14 +8,13 @@ import image4 from "../images/2.회사소개/IR-04.jpg";
 import image5 from "../images/2.회사소개/IR-05.jpg";
 import image6 from "../images/2.회사소개/IR-06.jpg";
 
+import gif2 from "../images/2.회사소개/2회사소개 - 2.gif";
 import popupIcon from "../images/ICONS/text_icon.png";
 
 const CompanyIntro = () => {
   const images = [image1, image2, image3, image4, image5, image6];
 
-
   const [activePopup, setActivePopup] = useState(null);
-
 
   const popupData = {
     "IR-02": "스템온은 디지털 방식 세포치료제 유도 플랫폼 UltraRepro와 디지털 방식 약물 탑재 플랫폼을 기반으로 다양한 난친성 질환에 대하여 치료제 부터 코스메슈티컬 제품을 개발하는 바이오플랫폼 회사입니다. 이에 세포 치료제의 대명사인 줄기세포 STEM과 디지털방식 스위치 On을 합하여 회사명을 스템온으로 하였습니다.",
@@ -33,7 +32,12 @@ const CompanyIntro = () => {
         return (
           <div key={index} className="image-container">
             <img src={img} alt={`Company Intro ${index + 1}`} />
-            
+
+            {/* Place GIF on the second image (IR-02) */}
+            {index === 1 && (
+              <img src={gif2} alt="Company Intro Animation" className="overlay-gif" />
+            )}
+
             {/* Popup Button (Only for specific images) */}
             {popupData[imageKey] && (
               <button className="popup-button" onClick={() => setActivePopup(imageKey)}>
