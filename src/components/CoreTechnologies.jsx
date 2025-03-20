@@ -31,7 +31,7 @@ const CoreTechnologies = () => {
   const [activePopup, setActivePopup] = useState(null);
 
   const popupData = {
-    "IR-02": "스템온의 첫번째 원천기술은 2017년 Biomaterials에 발표를 하였습니다. STEMON은 유전자 없이 세포를 리프로그래밍할 수 있는 혁신적인 기술인 Entr 기술을 개발하였습니다. Entr은 `Ultrasound-directed permeation of Environmental transition-guided cellular reprogramming`의 약어입니다. 이 기술은 특정 환경 조건을 가진 세포 배양 배지를 활용합니다. 섬유아세포(fibroblast)에 초음파를 처리하면, 해당 환경의 요소들이 세포 내부로 침투하여, 세포가 주어진 환경의 특성에 맞게 세포가 리프로그래밍됩니다. 쉽게 설명하면, 컴퓨터 프로그래밍에 비유할 수 있습니다.",
+    "IR-02": "스템온의 첫번째 원천기술은 2017년 Biomaterials에 발표를 하였습니다  STEMON은 유전자 없이 세포를 리프로그래밍할 수 있는 혁신적인 기술인 Entr 기술을 개발하였습니다. Entr은 `Ultrasound-directed permeation of Environmental transition-guided cellular reprogramming`의 약어입니다. 이 기술은 특정 환경 조건을 가진 세포 배양 배지를 활용합니다. 섬유아세포(fibroblast)에 초음파를 처리하면, 해당 환경의 요소들이 세포 내부로 침투하여, 세포가 주어진 환경의 특성에 맞게 세포가 리프로그래밍됩니다. 쉽게 설명하면, 컴퓨터 프로그래밍에 비유할 수 있습니다. ** 추가팝업창 (entr 영상 클릭시 나오는 팝업창) 피부섬유아 세포는 컴퓨터 Window라고 생각하시고 환경(배양 배지)은 코딩 소스 초음파는 ＂Enter＂ 키 윈도우에 코딩소스를 입력 후 엔터키를 누르 면 윈도우에서 코딩에 따라 새로운 프로그램이 실현되는 것과 유사합니다 ** 추가팝업창 (oCT 영상 클릭시 나오는 팝업창) 동영상에서 배아줄기세포 배양 배지를 환경으로 사용하여 Entr 기술을 적용하였습니다. 그 결과, 단 2일 만에 섬유아세포가 역분화줄기세포 (유도만능 줄기세포(pluripotent stem-like cell)로 리프로그래밍되었으며, 유도만능 줄기세포 마커인 Oct4의 녹색 형광 발현이 확인되었습니다.",
     "IR-03": "두번째 원천기술은 Entr과정에서 Entr에 의해 유도된 세포의 특성과 동일한 엑소좀을 유도 할 수 있는 기술을 개발하여 ACS Nano에 발표하였습니다. Entr기술에 의해 유도된 엑소좀내에는 세포의 특성에 맞는 다양한 리프로그래밍 factor가 포함되어 있기에 엑소좀이라는 말 대신에 reprosome이라고 칭합니다.",
     "IR-04": "Entr 기술의 100% 재현성을 위하여 세계 최초로 엑소좀 유도 자동화 장비를 최근 개발하였습니다. 이를 통해 균질한 엑소좀을 대량으로 생산 할 수 있게되었습니다.",
     "IR-05": "Entr 기술에서 중요한 환경의 세포내 유입메카니즘을 바탕으로 엑소좀내 디지털방식 약물탑재 자동화 시스템 시제품을 세계최초로 개발하였습니다. 우측 상단에 엑소좀내 기능성 약물들이 DDDS에 의해 탑재됨을 확인 할 수 있습니다.",
