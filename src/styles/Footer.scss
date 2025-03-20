@@ -1,18 +1,27 @@
 @import "./variables";
 
 .footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  width: 100%;
   padding: 20px 40px;
   background: $background-light;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .footer-content {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   .contact-info {
     font-size: 1rem;
     font-weight: 500;
     color: $primary-color;
-    line-height: 1.6;
     text-align: left;
+    white-space: nowrap;
 
     strong {
       font-weight: bold;
@@ -50,21 +59,28 @@
     }
   }
 
-  // 📌 Responsive Adjustments
-  @media (max-width: 768px) {
-    flex-direction: column;
-    text-align: center;
-    
+  // 📌 Mobile Adjustments
+  @media (max-width: 1024px) {
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
     .contact-info {
-      text-align: left;
-      margin-bottom: 15px;
-      font-size: 0.9rem;
-      width: 100%;
+      margin-bottom: 10px;
     }
 
     .button-container {
       justify-content: center;
       width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .contact-info {
+      font-size: 0.9rem;
+      text-align: center;
     }
 
     .qa-button {
