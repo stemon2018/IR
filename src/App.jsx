@@ -8,10 +8,12 @@ import BusinessPipeline from "./components/BusinessPipeline";
 import Patents from "./components/Patents";
 import Footer from "./components/Footer";
 import "./styles/variables.scss";
+// import Security from "./components/security";
 
 function App() {
   return (
     <div>
+      {/* <Security /> */}
       <Navbar />
       <Home />
       <CompanyIntro />
