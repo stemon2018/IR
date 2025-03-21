@@ -10,11 +10,12 @@ import image6 from "../images/5.특허, 인증/IR-06.jpg";
 import image7 from "../images/5.특허, 인증/IR-07.jpg";
 import image8 from "../images/5.특허, 인증/IR-08.jpg";
 import image9 from "../images/5.특허, 인증/IR-09.jpg";
+import image10 from "../images/5.특허, 인증/IR-10.jpg";
 
 import popupIcon from "../images/ICONS/text_icon.png";
 
 const Patents = () => {
-  const images = [image1, image2, image3, image4, image5, image6, image7, image8, image9];
+  const images = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10];
   const [activePopup, setActivePopup] = useState(null);
 
   const popupData = {
