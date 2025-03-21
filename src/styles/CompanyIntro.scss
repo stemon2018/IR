@@ -25,7 +25,7 @@
       display: block;
     }
 
-    /* GIF Overlay (Only on IR-02) */
+    /* GIF Overlay */
     .overlay-gif {
       position: absolute;
       top: 65%;
@@ -35,7 +35,6 @@
       max-width: 600px;
       height: auto;
       pointer-events: none;
-    /*  border-radius: 15px; */
     }
 
     /* Popup Button */
@@ -57,14 +56,21 @@
       }
     }
 
-    /* Specific Button Positioning for Different Images */
-    &:nth-child(1) .popup-button { bottom: 64%; left: 88%; }  // IR-01 Position
-    &:nth-child(2) .popup-button { bottom: 64%; left: 88%; }  // IR-02 Position
-    &:nth-child(3) .popup-button { bottom: 65%; left: 88%; }  // IR-03 Position
-    &:nth-child(4) .popup-button { bottom: 65%; left: 88%; }  // IR-04 Position
-    &:nth-child(5) .popup-button { bottom: 64%; left: 88%; }  // IR-05 Position
-    &:nth-child(6) .popup-button { bottom: 63%; left: 88%; }  // IR-06 Position
-    &:nth-child(7) .popup-button { bottom: 62%; left: 88%; }  // IR-07 Position
+    /* Button Positions */
+    &:nth-child(1) .popup-button { bottom: 64%; left: 88%; }  // IR-01
+    &:nth-child(2) .popup-button { bottom: 64%; left: 88%; }  // IR-02
+    &:nth-child(3) .popup-button { bottom: 65%; left: 88%; }  // IR-03
+    &:nth-child(4) .popup-button { bottom: 65%; left: 88%; }  // IR-04
+    &:nth-child(5) .popup-button { bottom: 64%; left: 88%; }  // IR-05
+    &:nth-child(6) .popup-button { bottom: 63%; left: 88%; }  // IR-06
+
+    /* Ensure Popup Appears Directly Below the Button */
+    &:nth-child(1) .popup-content { top: 110%; left: 88%; transform: translateX(-50%); }
+    &:nth-child(2) .popup-content { top: 110%; left: 88%; transform: translateX(-50%); }
+    &:nth-child(3) .popup-content { top: 110%; left: 88%; transform: translateX(-50%); }
+    &:nth-child(4) .popup-content { top: 110%; left: 88%; transform: translateX(-50%); }
+    &:nth-child(5) .popup-content { top: 110%; left: 88%; transform: translateX(-50%); }
+    &:nth-child(6) .popup-content { top: 110%; left: 88%; transform: translateX(-50%); }
   }
 }
 
@@ -82,40 +88,65 @@
   z-index: 999;
 }
 
+/* ✅ Fix Popup Positioning Below the Button */
 .popup-content {
+  position: absolute !important;  /* Force it to stay inside image-container */
   background: white;
-  padding: 20px;
-  width: 80%;
-  max-width: 500px;
-  border-radius: 10px;
-  text-align: center;
+  padding: 15px;
+  width: 280px;
+  border-radius: 12px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  font-size: 1rem;
-  font-weight: bold;
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 500;
   color: $primary-color;
   animation: fadeIn 0.3s ease-in-out;
+  z-index: 999;
+}
 
-  .close-popup {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: $primary-color;
+/* ✅ Match Footer Styling */
+.popup-content .popup-text {
+  color: $primary-color;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: left;
+  line-height: 1.6;
+}
 
-    &:hover {
-      color: darken($primary-color, 10%);
-    }
+.popup-content strong {
+  font-weight: bold;
+}
+
+.popup-content p {
+  margin-bottom: 5px;
+}
+
+.popup-content .icon {
+  margin-right: 5px;
+}
+
+/* Close Button */
+.popup-content .close-popup {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 0.7rem;
+  cursor: pointer;
+  color: $primary-color;
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: darken($primary-color, 10%);
   }
 }
 
-/* Popup Animation */
+/* Animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-10px);
   }
   to {
     opacity: 1;
@@ -126,62 +157,50 @@
 /* Responsive Fixes */
 @media (max-width: 1024px) {
   .popup-content {
-    width: 90%;
-    font-size: 0.9rem;
+    width: 250px;
+    padding: 12px;
   }
 
-  .popup-button img {
-    width: 50px;
+  .popup-text {
+    font-size: 0.85rem;
   }
 
-  .overlay-gif {
-    top: 60%;
-    width: 80vw;
-    max-width: 500px;
+  .close-popup {
+    font-size: 0.7rem;
   }
 
-  /* Adjust Icon Positions for Tablet Screens */
+  /* Adjust Popup Position for Tablets */
   .image-container {
-    &:nth-child(1) .popup-button { bottom: 10%; left: 5%; }
-    &:nth-child(2) .popup-button { bottom: 64%; left: 80%; }  
-    &:nth-child(3) .popup-button { bottom: 64%; left: 80%; }  
-    &:nth-child(4) .popup-button { bottom: 64%; left: 80%; }  
-    &:nth-child(5) .popup-button { bottom: 64%; left: 80%; }  
-    &:nth-child(6) .popup-button { bottom: 62%; left: 80%; }  
-    &:nth-child(7) .popup-button { bottom: 62%; left: 80%; }  
+    &:nth-child(1) .popup-content { top: 115%; left: 85%; }
+    &:nth-child(2) .popup-content { top: 115%; left: 85%; }
+    &:nth-child(3) .popup-content { top: 115%; left: 85%; }
+    &:nth-child(4) .popup-content { top: 115%; left: 85%; }
+    &:nth-child(5) .popup-content { top: 115%; left: 85%; }
+    &:nth-child(6) .popup-content { top: 115%; left: 85%; }
   }
 }
 
 @media (max-width: 768px) {
-  .popup-button {
-    bottom: 5%; /* Keep button positioning */
-    right: 10%;
-  }
-
-  .popup-button img {
-    width: 40px;
-  }
-
   .popup-content {
-    width: 95%;
+    width: 230px;
+    padding: 10px;
+  }
+
+  .popup-text {
     font-size: 0.8rem;
   }
 
-  .overlay-gif {
-    top: 55%;
-    left: 50%;
-    width: 50vw;
-    max-width: 250px;
+  .close-popup {
+    font-size: 0.6rem;
   }
 
-  /* Adjust Icon Positions for Mobile Screens */
+  /* Adjust Popup Position for Mobile */
   .image-container {
-    &:nth-child(1) .popup-button { bottom: 10%; left: 5%; }
-    &:nth-child(2) .popup-button { bottom: 60%; left: 75%; }  
-    &:nth-child(3) .popup-button { bottom: 60%; left: 75%; }  
-    &:nth-child(4) .popup-button { bottom: 60%; left: 75%; }  
-    &:nth-child(5) .popup-button { bottom: 60%; left: 75%; }  
-    &:nth-child(6) .popup-button { bottom: 60%; left: 75%; }  
-    &:nth-child(7) .popup-button { bottom: 60%; left: 75%; }  
+    &:nth-child(1) .popup-content { top: 120%; left: 80%; }
+    &:nth-child(2) .popup-content { top: 120%; left: 80%; }
+    &:nth-child(3) .popup-content { top: 120%; left: 80%; }
+    &:nth-child(4) .popup-content { top: 120%; left: 80%; }
+    &:nth-child(5) .popup-content { top: 120%; left: 80%; }
+    &:nth-child(6) .popup-content { top: 120%; left: 80%; }
   }
 }
