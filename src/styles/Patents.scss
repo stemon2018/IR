@@ -51,77 +51,88 @@
     &:nth-child(5) .popup-button { bottom: 65%; left: 88%; }  // IR-05 Position
     &:nth-child(6) .popup-button { bottom: 63%; left: 88%; }  // IR-06 Position
     &:nth-child(7) .popup-button { bottom: 63%; left: 88%; }  // IR-07 Position
+
+    /* New Styled Popup */
+    .popup-content {
+      position: absolute;
+      top: calc(33% + 10px);
+      left: 90%;
+      transform: translateX(-50%);
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 12px rgba(255, 255, 255, 1);
+      text-align: center;
+      width: 300px;
+      z-index: 1000;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: $primary-color;
+      animation: expandPopup 0.3s ease-out;
+
+      p {
+        margin: 0;
+        word-break: break-word;
+      }
+
+      .close-popup {
+        background: none;
+        border: none;
+        font-size: 0.8rem;
+        cursor: pointer;
+        color: $primary-color;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        transition: color 0.2s ease-in-out;
+
+        &:hover {
+          color: darken($primary-color, 10%);
+        }
+      }
+    }
   }
 }
 
-/* Popup Styling */
+/* Popup Overlay */
 .popup-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
   z-index: 999;
 }
 
-.popup-content {
-  background: white;
-  padding: 20px;
-  width: 80%;
-  max-width: 500px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  font-size: 1rem;
-  font-weight: bold;
-  color: $primary-color;
-  animation: fadeIn 0.3s ease-in-out;
-  position: relative;
-
-  .close-popup {
-    position: absolute;
-    top: 5px;
-    right: 15px;
-    background: none;
-    border: none;
-    font-size: 1rem;
-    cursor: pointer;
-    color: $primary-color;
-
-    &:hover {
-      color: darken($primary-color, 10%);
-    }
-  }
-}
-
-/* Popup Animation */
-@keyframes fadeIn {
-  from {
+@keyframes expandPopup {
+  0% {
+    transform: translateX(-50%) scaleY(0.7);
     opacity: 0;
-    transform: translateY(-20px);
   }
-  to {
+  100% {
+    transform: translateX(-50%) scaleY(1);
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
 /* Responsive Fixes */
 @media (max-width: 1024px) {
-  .popup-content {
-    width: 90%;
-    font-size: 0.9rem;
+  .patents .image-container .popup-content {
+    width: 220px !important;
+    font-size: 0.8rem !important;
+    padding: 10px !important;
+    left: 85% !important;
   }
 
   .popup-button img {
-    width: 50px !important; // Ensuring correct scaling for tablets
+    width: 50px !important;
   }
 
-  /* Adjust Icon Positions for Tablet Screens */
+  .close-popup {
+    font-size: 0.1rem;
+  }
+
   .image-container {
     &:nth-child(2) .popup-button { bottom: 20%; left: 5%; }
     &:nth-child(3) .popup-button { bottom: 18%; left: 5%; }
@@ -133,16 +144,22 @@
 }
 
 @media (max-width: 768px) {
-  .popup-content {
-    width: 95%;
-    font-size: 0.8rem;
+  .patents .image-container .popup-content {
+    width: 180px !important;
+    font-size: 0.7rem !important;
+    padding: 8px !important;
+    border-radius: 10px !important;
+    left: 80% !important;
   }
 
   .popup-button img {
-    width: 40px !important; // Ensuring correct scaling for mobile
+    width: 40px !important;
   }
 
-  /* Adjust Icon Positions for Mobile Screens */
+  .close-popup {
+    font-size: 0.3rem;
+  }
+
   .image-container {
     &:nth-child(2) .popup-button { bottom: 60%; left: 75%; }
     &:nth-child(3) .popup-button { bottom: 60%; left: 75%; }
@@ -150,5 +167,29 @@
     &:nth-child(5) .popup-button { bottom: 60%; left: 75%; }
     &:nth-child(6) .popup-button { bottom: 60%; left: 75%; }
     &:nth-child(7) .popup-button { bottom: 60%; left: 75%; }
+  }
+}
+
+@media (max-width: 480px) {
+  .image-container {
+    .popup-content {
+      width: 85vw !important;
+      font-size: 0.72rem !important;
+      padding: 10px !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      white-space: normal;
+      word-break: keep-all;
+    }
+
+    .popup-button img {
+      width: 36px !important;
+    }
+
+    .close-popup {
+      font-size: 0.4rem !important;
+      top: 6px;
+      right: 8px;
+    }
   }
 }

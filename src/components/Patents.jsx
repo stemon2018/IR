@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/Patents.scss";
+import { Expand } from "@progress/kendo-react-animation";
 
 import image1 from "../images/5.특허, 인증/IR-01.jpg";
 import image2 from "../images/5.특허, 인증/IR-02.jpg";
@@ -31,26 +32,31 @@ const Patents = () => {
     <section id="특허/인증" className="patents">
       {images.map((img, index) => {
         const imageKey = `IR-0${index + 1}`;
+        const isActive = activePopup === imageKey;
+
         return (
           <div key={index} className="image-container">
             <img src={img} alt={`Patent & Certification ${index + 1}`} />
+
             {popupData[imageKey] && (
-              <button className="popup-button" onClick={() => setActivePopup(imageKey)}>
-                <img src={popupIcon} alt="Popup Icon" />
-              </button>
+              <>
+                <button className="popup-button" onClick={() => setActivePopup(isActive ? null : imageKey)}>
+                  <img src={popupIcon} alt="Popup Icon" />
+                </button>
+
+                <Expand>
+                  {isActive && (
+                    <div className="popup-content">
+                      <button className="close-popup" onClick={() => setActivePopup(null)}>✕</button>
+                      <p>{popupData[imageKey]}</p>
+                    </div>
+                  )}
+                </Expand>
+              </>
             )}
           </div>
         );
       })}
-
-      {activePopup && (
-        <div className="popup-overlay" onClick={() => setActivePopup(null)}>
-          <div className="popup-content">
-            <button className="close-popup" onClick={() => setActivePopup(null)}>✕</button>
-            <p>{popupData[activePopup]}</p>
-          </div>
-        </div>
-      )}
     </section>
   );
 };
