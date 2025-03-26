@@ -123,6 +123,7 @@
     font-size: 0.8rem !important;
     padding: 10px !important;
     left: 85% !important;
+    transform: translateX(-50%) !important;
   }
 
   .popup-button img {
@@ -130,7 +131,9 @@
   }
 
   .close-popup {
-    font-size: 0.8rem;
+    font-size: 0.4rem;
+    top: 5px;
+    right: 10px;
   }
 
   .image-container {
@@ -149,7 +152,9 @@
     font-size: 0.7rem !important;
     padding: 8px !important;
     border-radius: 10px !important;
-    left: 80% !important;
+    left: 75% !important;
+    transform: translateX(-50%) !important;
+    word-break: break-word;
   }
 
   .popup-button img {
@@ -158,6 +163,8 @@
 
   .close-popup {
     font-size: 0.4rem;
+    top: 5px;
+    right: 10px;
   }
 
   .image-container {
@@ -179,7 +186,9 @@
       left: 50% !important;
       transform: translateX(-50%) !important;
       white-space: normal;
-      word-break: keep-all;
+      word-break: break-word;
+      max-width: 95vw;
+      box-sizing: border-box;
     }
 
     .popup-button img {
