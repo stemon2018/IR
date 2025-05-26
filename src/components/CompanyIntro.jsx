@@ -7,12 +7,13 @@ import image3 from "../images/2.회사소개/IR-03.jpg";
 import image4 from "../images/2.회사소개/IR-04.jpg";
 import image5 from "../images/2.회사소개/IR-05.jpg";
 import image6 from "../images/2.회사소개/IR-06.jpg";
+import image7 from "../images/2.회사소개/IR-07.jpg";
 
 import gif2 from "../images/2.회사소개/2회사소개 - 2.gif";
 import popupIcon from "../images/ICONS/text_icon.png";
 
 const CompanyIntro = () => {
-  const images = [image1, image2, image3, image4, image5, image6];
+  const images = [image1, image2, image3, image4, image5, image6, image7];
 
   const [activePopup, setActivePopup] = useState(null);
 
