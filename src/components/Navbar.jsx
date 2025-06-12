@@ -1,26 +1,43 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { Link } from "react-scroll";
 import "../styles/Navbar.scss";
 import logo from "../assets/logo.png";
 import { Menu, X } from "lucide-react";
+import { useLanguage } from "../LanguageContext";
 
 const Navbar = () => {
+  const { language, toggleLanguage } = useLanguage();
   const [activeSection, setActiveSection] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  const sections = useMemo(() => (
+    [
+      "home",
+      language === "KR" ? "회사소개" : "CompanyIntro",
+      language === "KR" ? "핵심역량기술" : "CoreTechnologies",
+      language === "KR" ? "비즈니스파이프라인" : "BusinessPipeline",
+      language === "KR" ? "특허/인증" : "Patents"
+    ]
+  ), [language]);
+
+  const sectionLabels = useMemo(() => (
+    language === "KR"
+      ? ["홈", "회사소개", "핵심역량기술", "비즈니스파이프라인", "특허/인증"]
+      : ["Home", "Company Intro", "Core Technologies", "Business Pipeline", "Patents"]
+  ), [language]);
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
-
-      const sections = ["home", "회사소개", "핵심역량기술", "비즈니스파이프라인", "특허/인증"];
       let foundSection = "home";
 
       for (let section of sections) {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          if (rect.top <= 150 && rect.bottom >= 150) {
+          const middleOfScreen = window.innerHeight / 2;
+          if (rect.top <= middleOfScreen && rect.bottom >= middleOfScreen) {
             foundSection = section;
             break;
           }
@@ -31,7 +48,7 @@ const Navbar = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [sections]);
 
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""} ${menuOpen ? "open" : ""}`}>
@@ -44,19 +61,26 @@ const Navbar = () => {
       </button>
 
       <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-        {["home", "회사소개", "핵심역량기술", "비즈니스파이프라인", "특허/인증"].map((section) => (
+        {sections.map((section, index) => (
           <li key={section}>
             <Link
               to={section}
               smooth={true}
               duration={800}
+              offset={-50}
               className={activeSection === section ? "active" : ""}
               onClick={() => setMenuOpen(false)}
             >
-              {section.replace("-", " ").toUpperCase()}
+              {sectionLabels[index]}
             </Link>
           </li>
         ))}
+
+        <li className="lang-toggle">
+          <button onClick={toggleLanguage}>
+            {language === "KR" ? "EN" : "KR"}
+          </button>
+        </li>
       </ul>
     </nav>
   );
