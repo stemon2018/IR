@@ -28,7 +28,7 @@ const CompanyIntro = ({ language }) => {
 
   const images = language === "KR"
     ? [image1KR, image2KR, image3KR, image4KR, image6KR, image5KR, image7KR]
-    : [image1EN, image2EN, image3EN, image4EN, image6EN, image5EN, image7EN];
+    : [image1EN, image2EN, image3EN, image4EN, image5EN, image6EN, image7EN];
 
   const [activePopup, setActivePopup] = useState(null);
 
