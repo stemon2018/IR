@@ -90,6 +90,31 @@
         }
       }
     }
+
+    .lang-toggle {
+      button.flag-button {
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        padding: 0;
+
+        img.flag-icon {
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+          transition: transform 0.2s ease;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+
+          @media (max-width: 768px) {
+            width: 24px;
+            height: 24px;
+          }
+        }
+      }
+    }
   }
 
   @media (max-width: 1024px) {

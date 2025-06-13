@@ -259,3 +259,16 @@
     width: 45vw;
   }
 }
+
+    /* Fix GIF1 and GIF2 positions for English version only */
+  .core-technologies-section.en .image-container .gif1 {
+      top: 75% !important;
+      left: 48% !important;
+    
+  }
+
+  .core-technologies-section.en .image-container .gif2 {
+      top: 69% !important;
+      left: 69% !important;
+    
+  }
