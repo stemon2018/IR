@@ -5,6 +5,10 @@ import logo from "../assets/logo.png";
 import { Menu, X } from "lucide-react";
 import { useLanguage } from "../LanguageContext";
 
+// Import flag icons
+import krFlag from "../assets/flags/kr.png";
+import usFlag from "../assets/flags/us.png";
+
 const Navbar = () => {
   const { language, toggleLanguage } = useLanguage();
   const [activeSection, setActiveSection] = useState("home");
@@ -77,8 +81,12 @@ const Navbar = () => {
         ))}
 
         <li className="lang-toggle">
-          <button onClick={toggleLanguage}>
-            {language === "KR" ? "EN" : "KR"}
+          <button onClick={toggleLanguage} className="flag-button">
+            <img
+              src={language === "KR" ? usFlag : krFlag}
+              alt="Language Toggle"
+              className="flag-icon"
+            />
           </button>
         </li>
       </ul>

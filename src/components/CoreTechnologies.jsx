@@ -74,7 +74,7 @@ const CoreTechnologies = ({ language }) => {
   const popupData = language === "KR" ? popupDataKR : popupDataEN;
 
   return (
-    <section id={sectionId} className="core-technologies-section">
+    <section id={sectionId} className={`core-technologies-section ${language === "KR" ? "" : "en"}`}>
       {images.map((img, index) => {
         const imageKey = `IR-0${index + 1}`;
         return (
