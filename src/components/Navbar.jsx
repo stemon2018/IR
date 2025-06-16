@@ -60,6 +60,17 @@ const Navbar = () => {
         <img src={logo} alt="Company Logo" />
       </div>
 
+      {/* LANGUAGE SELECTOR */}
+      <div className="language-selector">
+        <button onClick={toggleLanguage} className="flag-button">
+          <img
+            src={language === "KR" ? usFlag : krFlag}
+            alt="Language Toggle"
+            className="flag-icon"
+          />
+        </button>
+      </div>
+
       <button className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
         {menuOpen ? <X size={30} /> : <Menu size={30} />}
       </button>
@@ -79,16 +90,6 @@ const Navbar = () => {
             </Link>
           </li>
         ))}
-
-        <li className="lang-toggle">
-          <button onClick={toggleLanguage} className="flag-button">
-            <img
-              src={language === "KR" ? usFlag : krFlag}
-              alt="Language Toggle"
-              className="flag-icon"
-            />
-          </button>
-        </li>
       </ul>
     </nav>
   );
