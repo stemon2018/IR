@@ -60,7 +60,6 @@ const Navbar = () => {
         <img src={logo} alt="Company Logo" />
       </div>
 
-      {/* LANGUAGE SELECTOR */}
       <div className="language-selector">
         <button onClick={toggleLanguage} className="flag-button">
           <img

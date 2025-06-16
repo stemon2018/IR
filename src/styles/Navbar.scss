@@ -6,7 +6,7 @@
   width: 100%;
   padding: 15px 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start; // left-align logo + flag
   align-items: center;
   z-index: 1000;
   background: transparent;
@@ -24,10 +24,8 @@
     }
   }
 
-  /* LANGUAGE SELECTOR ALWAYS VISIBLE */
   .language-selector {
-    margin-left: auto;
-    margin-right: 60px;
+    margin-left: 20px;
 
     .flag-button {
       border: none;
@@ -59,10 +57,9 @@
     border: none;
     color: white;
     cursor: pointer;
+    margin-left: auto;
     margin-right: 20px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    position: relative;
     z-index: 3000;
 
     svg {
@@ -157,9 +154,5 @@
       width: 100%;
       display: block;
     }
-  }
-
-  .menu-icon svg {
-    color: #ebecf3 !important;
   }
 }
