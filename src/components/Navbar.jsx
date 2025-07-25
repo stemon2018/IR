@@ -2,6 +2,8 @@ import React, { useState, useEffect, useMemo } from "react";
 import { Link } from "react-scroll";
 import "../styles/Navbar.scss";
 import logo from "../assets/logo.png";
+import brochureKO from "../images/ICONS/Brochure button_KR.png";
+import brochureEN from "../images/ICONS/Brochure button_ENG.png";
 import { Menu, X } from "lucide-react";
 import { useLanguage } from "../LanguageContext";
 
@@ -60,7 +62,7 @@ const Navbar = () => {
         <img src={logo} alt="Company Logo" />
       </div>
 
-      <div className="language-selector">
+      <div className="language-brochure-container">
         <button onClick={toggleLanguage} className="flag-button">
           <img
             src={language === "KR" ? usFlag : krFlag}
@@ -68,6 +70,19 @@ const Navbar = () => {
             className="flag-icon"
           />
         </button>
+
+        <a
+          href="https://linktr.ee/stemon"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="brochure-image-button"
+        >
+          <img
+            src={language === "KR" ? brochureKO : brochureEN}
+            alt="Brochure"
+            className="brochure-image"
+          />
+        </a>
       </div>
 
       <button className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
@@ -77,16 +92,16 @@ const Navbar = () => {
       <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
         {sections.map((section, index) => (
           <li key={section}>
-            <Link
-              to={section}
-              smooth={true}
-              duration={800}
-              offset={-50}
-              className={activeSection === section ? "active" : ""}
-              onClick={() => setMenuOpen(false)}
-            >
-              {sectionLabels[index]}
-            </Link>
+          <Link
+          to={section}
+          smooth="easeInOutQuart"
+          duration={600}
+          offset={-70}
+          className={activeSection === section ? "active" : ""}
+         onClick={() => setMenuOpen(false)}
+        > 
+        {sectionLabels[index]}
+        </Link>
           </li>
         ))}
       </ul>
