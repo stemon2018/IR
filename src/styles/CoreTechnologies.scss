@@ -1,0 +1,274 @@
+@import "./variables";
+
+.core-technologies-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background-color: $primary-color;
+
+  .image-container {
+    position: relative;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100vw;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* GIF Overlays for IR-02 */
+    .gif1 {
+      position: absolute;
+      top: 69%;
+      left: 48%;
+      transform: translate(-50%, -50%);
+      width: 16vw;
+      max-width: 305px;
+      height: auto;
+      pointer-events: none;
+      border-radius: 0px;
+    }
+
+    .gif2 {
+      position: absolute;
+      top: 63%;
+      left: 69%;
+      transform: translate(-50%, -50%);
+      width: 16vw;
+      max-width: 350px;
+      height: 305px;
+      pointer-events: none;
+      border-radius: 10px;
+    }
+
+    /* GIF Overlays for IR-03 */
+    .gif3 {
+      position: absolute;
+      top: 66%;
+      left: 46%;
+      transform: translate(-50%, -50%);
+      width: 16vw;
+      max-width: 300px;
+      height: 300px;
+      pointer-events: none;
+      border-radius: 10px;
+    }
+
+    .gif4 {
+      position: absolute;
+      top: 58%;
+      left: 68%;
+      transform: translate(-50%, -50%);
+      width: 22vw;
+      max-width: 600px;
+      height: 300px;
+      pointer-events: none;
+      border-radius: 10px;
+    }
+
+    /* GIF Overlays for IR-04 */
+    .gif5 {
+      position: absolute;
+      top: 56%;
+      left: 48%;
+      transform: translate(-50%, -50%);
+      width: 15vw;
+      max-width: 280px;
+      height: auto;
+      pointer-events: none;
+     /* border-radius: 10px; */
+    }
+
+    .gif6 {
+      position: absolute;
+      top: 43%;
+      left: 73%;
+      transform: translate(-50%, -50%);
+      width: 9vw;
+      max-width: 200px;
+      height: 600px;
+      pointer-events: none;
+      border-radius: 19px;
+    }
+
+    .gif7 {
+      position: absolute;
+      top: 62%;
+      left: 73%;
+      transform: translate(-50%, -50%);
+      width: 9vw;
+      max-width: 200px;
+      height: 600px;
+      pointer-events: none;
+      // border-radius: 19px;
+    }
+
+    /* IR-5 page */
+    .gif8 {
+      position: absolute;
+      top: 45%;
+      left: 35%;
+      transform: translate(-50%, -50%);
+      width: 5vw;
+      max-width: 90px;
+      height: 150px;
+      pointer-events: none;
+      border-radius: 10px;
+    }
+
+    .gif9 {
+      position: absolute;
+      top: 45%;
+      left: 56%;
+      transform: translate(-50%, -50%);
+      width: 5vw;
+      max-width: 90px;
+      height: 150px;
+      pointer-events: none;
+      border-radius: 10px;
+    }
+
+    .gif10 {
+      position: absolute;
+      top: 45%;
+      left: 71%;
+      transform: translate(-50%, -50%);
+      width: 9vw;
+      max-width: 200px;
+      height: auto;
+      pointer-events: none;
+      // border-radius: 19px;
+    }
+
+    .gif11 {
+      position: absolute;
+      top: 45%;
+      left: 28%;
+      transform: translate(-50%, -50%);
+      width: 16vw;
+      max-width: 290px;
+      height: 300px;
+      pointer-events: none;
+     border-radius: 19px;
+    }
+
+    .gif12 {
+      position: absolute;
+      top: 73%;
+      left: 28%;
+      transform: translate(-50%, -50%);
+      width: 16vw;
+      max-width: 290px;
+      height: 300px;
+      pointer-events: none;
+      border-radius: 19px;
+    }
+
+
+    /* Popup Button */
+    .popup-button {
+      position: absolute;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+
+      img {
+        width: 5vw;
+        max-width: 80px;
+        height: auto;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    /* Specific Button Positioning */
+    &:nth-child(2) .popup-button { bottom: 64%; left: 88%; }  // IR-02 Position
+    &:nth-child(3) .popup-button { bottom: 65%; left: 88%; }  // IR-03 Position
+    &:nth-child(4) .popup-button { bottom: 65%; left: 88%; }  // IR-04 Position
+    &:nth-child(5) .popup-button { bottom: 64%; left: 88%; }  // IR-05 Position
+    &:nth-child(6) .popup-button { bottom: 63%; left: 88%; }  // IR-06 Position
+    &:nth-child(7) .popup-button { bottom: 63%; left: 88%; }  // IR-07 Position
+    &:nth-child(8) .popup-button { bottom: 64%; left: 88%; }  // IR-08 Position
+    &:nth-child(9) .popup-button { bottom: 65%; left: 88%; }  // IR-09 Position
+  }
+}
+
+/* Responsive Fixes */
+@media (max-width: 1024px) {
+  .gif1, .gif2, .gif3, .gif4, .gif5, .gif6, .gif7, .gif8, .gif9 .gif10, .gif11, .gif12 {
+    width: 25vw;
+  }
+
+  .popup-content {
+    width: 90%;
+    font-size: 0.9rem;
+  }
+
+  .popup-button img {
+    width: 50px;
+  }
+
+  /* Adjust Icon Positions for Tablet Screens */
+  .image-container {
+    &:nth-child(2) .popup-button { bottom: 64%; left: 80%; }  
+    &:nth-child(3) .popup-button { bottom: 64%; left: 80%; }  
+    &:nth-child(4) .popup-button { bottom: 64%; left: 80%; }  
+    &:nth-child(5) .popup-button { bottom: 64%; left: 80%; }  
+    &:nth-child(6) .popup-button { bottom: 62%; left: 80%; }  
+    &:nth-child(7) .popup-button { bottom: 62%; left: 80%; }  
+    &:nth-child(8) .popup-button { bottom: 63%; left: 80%; }  
+    &:nth-child(9) .popup-button { bottom: 64%; left: 80%; }  
+  }
+}
+
+@media (max-width: 768px) {
+  .popup-content {
+    width: 95%;
+    font-size: 0.8rem;
+  }
+
+  .popup-button img {
+    width: 40px;
+  }
+
+  /* Adjust Icon Positions for Mobile Screens */
+  .image-container {
+    &:nth-child(2) .popup-button { bottom: 60%; left: 75%; }  
+    &:nth-child(3) .popup-button { bottom: 60%; left: 75%; }  
+    &:nth-child(4) .popup-button { bottom: 60%; left: 75%; }  
+    &:nth-child(5) .popup-button { bottom: 60%; left: 75%; }  
+    &:nth-child(6) .popup-button { bottom: 60%; left: 75%; }  
+    &:nth-child(7) .popup-button { bottom: 60%; left: 75%; }  
+    &:nth-child(8) .popup-button { bottom: 60%; left: 75%; }  
+    &:nth-child(9) .popup-button { bottom: 60%; left: 75%; }  
+  }
+
+  .gif1, .gif2, .gif3, .gif4, .gif5, .gif6, .gif7, .gif8, .gif9 .gif10, .gif11, .gif12 {
+    width: 45vw;
+  }
+}
+
+    /* Fix GIF1 and GIF2 positions for English version only */
+  .core-technologies-section.en .image-container .gif1 {
+      top: 75% !important;
+      left: 48% !important;
+    
+  }
+
+  .core-technologies-section.en .image-container .gif2 {
+      top: 69% !important;
+      left: 69% !important;
+    
+  }

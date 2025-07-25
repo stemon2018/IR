@@ -1,0 +1,158 @@
+@import "./variables";
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: flex-start; // left-align logo + flag
+  align-items: center;
+  z-index: 1000;
+  background: transparent;
+  transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+  &.scrolled {
+    background: $primary-color;
+  }
+
+  .logo {
+    margin-left: 20px;
+    img {
+      height: 40px;
+      width: auto;
+    }
+  }
+
+  .language-selector {
+    margin-left: 20px;
+
+    .flag-button {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      padding: 0;
+
+      .flag-icon {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        transition: transform 0.2s ease;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+
+  .menu-icon {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 20px;
+    position: relative;
+    z-index: 3000;
+
+    svg {
+      color: $text-light !important;
+      fill: white !important;
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin-left: auto;
+    padding-right: 30px;
+
+    li a {
+      color: $text-light;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      padding: 10px 15px;
+      transition: color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
+      position: relative;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 0%;
+        height: 2px;
+        background-color: $secondary-color;
+        transition: width 0.3s ease-in-out;
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      &.active {
+        color: $secondary-color;
+
+        &::after {
+          width: 100%;
+        }
+      }
+
+      &:hover {
+        color: $secondary-color;
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .menu-icon {
+      display: block;
+    }
+
+    .nav-links {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: auto;
+      max-height: 100vh;
+      width: 220px;
+      background: rgba(0, 0, 0, 0.9);
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 2rem;
+      display: flex;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-links.open {
+      transform: translateX(0);
+    }
+
+    li {
+      text-align: left;
+      padding: 15px 0;
+      width: 100%;
+    }
+
+    li a {
+      font-size: 1.2rem;
+      width: 100%;
+      display: block;
+    }
+  }
+}

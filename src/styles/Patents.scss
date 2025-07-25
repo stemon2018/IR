@@ -1,0 +1,204 @@
+@import "./variables";
+
+.patents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background-color: $primary-color;
+
+  .image-container {
+    position: relative;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100vw;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* Popup Button */
+    .popup-button {
+      position: absolute;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+
+      img {
+        width: 5vw;
+        max-width: 80px;
+        height: auto;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    /* Specific Button Positioning for Different Images */
+    &:nth-child(2) .popup-button { bottom: 65%; left: 88%; }  // IR-02 Position
+    &:nth-child(3) .popup-button { bottom: 65%; left: 88%; }  // IR-03 Position
+    &:nth-child(4) .popup-button { bottom: 65%; left: 88%; }  // IR-04 Position
+    &:nth-child(5) .popup-button { bottom: 65%; left: 88%; }  // IR-05 Position
+    &:nth-child(6) .popup-button { bottom: 63%; left: 88%; }  // IR-06 Position
+    &:nth-child(7) .popup-button { bottom: 63%; left: 88%; }  // IR-07 Position
+
+    /* New Styled Popup */
+    .popup-content {
+      position: absolute;
+      top: calc(33% + 10px);
+      left: 90%;
+      transform: translateX(-50%);
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 12px rgba(255, 255, 255, 1);
+      text-align: center;
+      width: 300px;
+      z-index: 1000;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: $primary-color;
+      animation: expandPopup 0.3s ease-out;
+
+      p {
+        margin: 0;
+        word-break: break-word;
+      }
+
+      .close-popup {
+        background: none;
+        border: none;
+        font-size: 0.8rem;
+        cursor: pointer;
+        color: $primary-color;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        transition: color 0.2s ease-in-out;
+
+        &:hover {
+          color: darken($primary-color, 10%);
+        }
+      }
+    }
+  }
+}
+
+/* Popup Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+
+@keyframes expandPopup {
+  0% {
+    transform: translateX(-50%) scaleY(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-50%) scaleY(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive Fixes */
+@media (max-width: 1024px) {
+  .patents .image-container .popup-content {
+    width: 220px !important;
+    font-size: 0.8rem !important;
+    padding: 10px !important;
+    left: 85% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .popup-button img {
+    width: 50px !important;
+  }
+
+  .close-popup {
+    font-size: 0.4rem;
+    top: 5px;
+    right: 10px;
+  }
+
+  .image-container {
+    &:nth-child(2) .popup-button { bottom: 20%; left: 5%; }
+    &:nth-child(3) .popup-button { bottom: 18%; left: 5%; }
+    &:nth-child(4) .popup-button { bottom: 15%; right: 5%; }
+    &:nth-child(5) .popup-button { bottom: 12%; left: 5%; }
+    &:nth-child(6) .popup-button { bottom: 10%; left: 80%; }
+    &:nth-child(7) .popup-button { bottom: 16%; right: 10%; }
+  }
+}
+
+@media (max-width: 768px) {
+  .patents .image-container .popup-content {
+    width: 180px !important;
+    font-size: 0.7rem !important;
+    padding: 8px !important;
+    border-radius: 10px !important;
+    left: 75% !important;
+    transform: translateX(-50%) !important;
+    word-break: break-word;
+  }
+
+  .popup-button img {
+    width: 40px !important;
+  }
+
+  .close-popup {
+    font-size: 0.4rem;
+    top: 5px;
+    right: 10px;
+  }
+
+  .image-container {
+    &:nth-child(2) .popup-button { bottom: 60%; left: 75%; }
+    &:nth-child(3) .popup-button { bottom: 60%; left: 75%; }
+    &:nth-child(4) .popup-button { bottom: 60%; left: 75%; }
+    &:nth-child(5) .popup-button { bottom: 60%; left: 75%; }
+    &:nth-child(6) .popup-button { bottom: 60%; left: 75%; }
+    &:nth-child(7) .popup-button { bottom: 60%; left: 75%; }
+  }
+}
+
+@media (max-width: 480px) {
+  .image-container {
+    .popup-content {
+      width: 85vw !important;
+      font-size: 0.72rem !important;
+      padding: 10px !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      white-space: normal;
+      word-break: break-word;
+      max-width: 95vw;
+      box-sizing: border-box;
+    }
+
+    .popup-button img {
+      width: 36px !important;
+    }
+
+    .close-popup {
+      font-size: 0.4rem !important;
+      top: 6px;
+      right: 8px;
+    }
+  }
+}
