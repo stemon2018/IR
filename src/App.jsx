@@ -13,7 +13,7 @@ function App() {
   const { language } = useLanguage();  // Get language from context
 
   return (
-    <div>
+    <div>123
       <Navbar />
       <Home language={language} />
       <CompanyIntro language={language} />
