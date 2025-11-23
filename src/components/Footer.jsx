@@ -13,8 +13,8 @@ const Footer = () => {
 
   // Name & position bilingual
   const contactName = language === "KR"
-    ? "권지민 차장 (경영전략팀)"
-    : "Jimin Kwon, Deputy General Manager (Business Strategy Team)";
+    ? "경영전략팀"
+    : "Business Strategy Team";
 
   return (
     <footer className="footer">
