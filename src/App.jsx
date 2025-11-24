@@ -46,7 +46,7 @@ import { useLanguage } from "./LanguageContext";  // Import Language Context
 // Show ChatBOT
 function App() {
   const { language } = useLanguage();  // Get language from context
-  const [showChatbot, toggleChatbot] = useState(true); // init chatBoard ON
+  const [showChatbot, toggleChatbot] = useState(false); // init chatBot view OFF
 
   return (
     <div className="App">
