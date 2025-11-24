@@ -34,7 +34,7 @@ const Footer = () => {
       {showDetails && (
         <div className="contact-popup fade-in">
           <p><strong>{contactDetailTitle} :</strong> {contactName}</p>
-          <p>📞 Tel: 031-622-7723</p>
+          <p>📞 Tel: +82 31 622 7723</p>
           <p>📧 E-mail: stemon@stemon.co.kr</p>
           <button className="close-popup" onClick={() => setShowDetails(false)}>✕</button>
         </div>
